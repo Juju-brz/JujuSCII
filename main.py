@@ -50,8 +50,7 @@ def convert_image_to_ASCII(path):
 app = PySide6.QtWidgets.QApplication()
 #app = QApplication()
 
-label = QLabel(text="Coucou")
-#label.show()
+
 
 layoutWindow = QVBoxLayout()
 
@@ -63,7 +62,7 @@ mainWindow.resize(1200, 1000)
 label = QLabel(text=" Enter path of image to convert")
 champ_text = QLineEdit()
 
-button_convert = QPushButton(text="CONVERTIR")
+button_convert = QPushButton(text="CONVERT")
 result_ascii = QTextEdit()
 
 mainWindow.setWindowTitle("JujuSCII")
