@@ -51,8 +51,6 @@ def convert_image_to_ASCII(path):
 app = PySide6.QtWidgets.QApplication()
 #app = QApplication()
 
-
-
 layoutWindow = QVBoxLayout()
 
 mainWindow = QDialog()
@@ -64,25 +62,37 @@ label = QLabel(text=" Enter path of image to convert")
 champ_text = QLineEdit()
 
 
-
 button_convert = QPushButton(text="CONVERT")
 result_ascii = QTextEdit()
 
 input = QLineEdit()
 input.returnPressed.connect(button_convert.click)
 
+ASCII_button = QPushButton(text="ASCII")
+
 mainWindow.setWindowTitle("JujuSCII")
 layoutWindow.addWidget(label)
 layoutWindow.addWidget(champ_text)
+layoutWindow.addWidget(ASCII_button)
 layoutWindow.addWidget(button_convert)
 layoutWindow.addWidget(result_ascii)
 
-def click():
+def clickConvert():
     file_Path = champ_text.text()
     imageASCII = convert_image_to_ASCII(file_Path)
     result_ascii.setText(imageASCII)
 
-button_convert.clicked.connect(click)
+button_convert.clicked.connect(clickConvert)
+
+
+#### Tool Window #####
+
+def ToolASCII():
+    toolWindow = QDialog()
+    toolWindow.show()
+    return 0
+
+ASCII_button.clicked.connect(ToolASCII)
 
 result_ascii.setFontFamily("Liberation Mono")
 app.exec()
