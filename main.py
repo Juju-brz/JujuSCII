@@ -7,7 +7,7 @@ ok good
 """
 from PIL import Image
 import PySide6.QtWidgets
-from PySide6.QtWidgets import QLabel, QDialog, QPushButton, QVBoxLayout, QLineEdit, QTextEdit
+from PySide6.QtWidgets import QLabel, QDialog, QPushButton, QVBoxLayout, QLineEdit, QTextEdit, QWidget
 
 
 ####    ASCII   ####
@@ -63,8 +63,13 @@ mainWindow.resize(1200, 1000)
 label = QLabel(text=" Enter path of image to convert")
 champ_text = QLineEdit()
 
+
+
 button_convert = QPushButton(text="CONVERT")
 result_ascii = QTextEdit()
+
+input = QLineEdit()
+input.returnPressed.connect(button_convert.click)
 
 mainWindow.setWindowTitle("JujuSCII")
 layoutWindow.addWidget(label)
