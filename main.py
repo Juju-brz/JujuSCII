@@ -9,7 +9,7 @@ from PIL import Image
 import PySide6.QtWidgets
 from PySide6.QtWidgets import QLabel, QDialog, QPushButton, QVBoxLayout, QLineEdit, QTextEdit, QWidget, QHBoxLayout
 
-SizeASCIIX = 100
+sizeASCIIX = 100
 sizeASCIIY = 100
 ####    ASCII   ####
 def convert_image_to_ASCII(path):
@@ -17,7 +17,7 @@ def convert_image_to_ASCII(path):
     #myImage.show()
     myCharacter = ""
     myImg_in_grscal = myImage.convert("L")
-    LittlemyImg_in_grscal = myImg_in_grscal.resize([SizeASCIIX, sizeASCIIY])
+    LittlemyImg_in_grscal = myImg_in_grscal.resize([sizeASCIIX, sizeASCIIY])
     #myImg_in_grscal.show()
 
     Weight = LittlemyImg_in_grscal.size[0]
@@ -81,35 +81,38 @@ champ_text = QLineEdit()
 button_convert = QPushButton(text="CONVERT")
 result_ascii = QTextEdit()
 
-#### SIZE ####
-SizeASCIILabel = QLabel(text="ASCII size")
-SizeASCIIBox = QHBoxLayout()
-SizeASCIIButton1 = QPushButton("40 x 40")
-SizeASCIIButton2 = QPushButton("80 x 80")
-SizeASCIIButton3 = QPushButton("100 x 100")
+#### size ####
+sizeASCIILabel = QLabel(text="ASCII size")
+sizeASCIIBox = QHBoxLayout()
+sizeASCIIButton1 = QPushButton("40 x 40")
+sizeASCIIButton2 = QPushButton("80 x 80")
+sizeASCIIButton3 = QPushButton("100 x 100")
 
-SizeASCIIBox.addWidget(SizeASCIIButton1)
-SizeASCIIBox.addWidget(SizeASCIIButton2)
-SizeASCIIBox.addWidget(SizeASCIIButton3)
+sizeASCIIBox.addWidget(sizeASCIIButton1)
+sizeASCIIBox.addWidget(sizeASCIIButton2)
+sizeASCIIBox.addWidget(sizeASCIIButton3)
 
-def changeSizeASCII1():
-    global SizeASCIIX, SizeASCIIY 
-    SizeASCIIX =40
-    SizeASCIIY =40
+def changesizeASCII1():
+    global sizeASCIIX, sizeASCIIY 
+    sizeASCIIX =40
+    sizeASCIIY =40
+    print(f"sizeASCIIX: {sizeASCIIX}, sizeASCIIY: {sizeASCIIY}")
 
-def changeSizeASCII2():
-    global SizeASCIIX, SizeASCIIY 
-    SizeASCIIX =80
-    SizeASCIIY =80
+def changesizeASCII2():
+    global sizeASCIIX, sizeASCIIY 
+    sizeASCIIX =80
+    sizeASCIIY =80
+    print(f"sizeASCIIX: {sizeASCIIX}, sizeASCIIY: {sizeASCIIY}")
 
-def changeSizeASCII3():
-    global SizeASCIIX, SizeASCIIY 
-    SizeASCIIX =100
-    SizeASCIIY =100
+def changesizeASCII3():
+    global sizeASCIIX, sizeASCIIY 
+    sizeASCIIX =100
+    sizeASCIIY =100
+    print(f"sizeASCIIX: {sizeASCIIX}, sizeASCIIY: {sizeASCIIY}")
 
-SizeASCIIButton1.clicked.connect(changeSizeASCII1)
-SizeASCIIButton2.clicked.connect(changeSizeASCII2)
-SizeASCIIButton3.clicked.connect(changeSizeASCII3)
+sizeASCIIButton1.clicked.connect(changesizeASCII1)
+sizeASCIIButton2.clicked.connect(changesizeASCII2)
+sizeASCIIButton3.clicked.connect(changesizeASCII3)
 
 
 
@@ -126,8 +129,8 @@ layoutWindow.addWidget(label)
 layoutWindow.addWidget(champ_text)
 #layoutWindow.addChildLayout(ToolASCII)
 layoutWindow.addWidget(ASCII_button)
-layoutWindow.addWidget(SizeASCIILabel)
-layoutWindow.addLayout(SizeASCIIBox)
+layoutWindow.addWidget(sizeASCIILabel)
+layoutWindow.addLayout(sizeASCIIBox)
 layoutWindow.addWidget(button_convert)
 layoutWindow.addWidget(result_ascii)
 
